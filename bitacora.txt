@@ -15,3 +15,14 @@ Rol (html,css,js):
  ·css:  dara vida a la pagina (color).
  ·js:   ejecutara las acciones (html,css) ejemplo: botones,funciones,acciones.
 
+El archivo de orign es index.html; como destino rueda libre.
+la ruta a seguir es:
+ rueda libre - tarifas - reservas.
+ rueda libre - reservas - tarifas.
+ reservas - tarifas - rueda libre.
+ reservas - rueda libre - tarifas.
+ tarifas - reservas - rueda libre.
+ tarifas - rueda libre - reservas.
+ rueda libre - correo.
+ reservas - correo.
+ tarifas - correo.
