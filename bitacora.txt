@@ -26,3 +26,11 @@ la ruta a seguir es:
  rueda libre - correo.
  reservas - correo.
  tarifas - correo.
+
+ Encabezado: titulo rueda libre, alquiler de bicicletas en medellin.
+ navegacion: pagina principal, tarifas y recorridos, reservas, nuestro correo, nuestra direccion. 
+ contenido principal: bienvenida, como alquilar tu bicicleta, donde encontrarnos, quienes somos, nuestros servicios, que debes llevar, nuestras tarifas y recorridos y horarios de salida.
+ secciones: inicio (rueda libre), nuestras tarifas (cuento cuesta y salidas), reserva ahora (seccion no terminada)
+ articulos: bicicletas, rutas (urbanas, montaña, electricas) con casco y equipo de proteccion incluidos.
+ contenido complementario: todas las dudas que se tengan pueden enviar un gmail al correo. 
+ pie: titulo de la pagina (Rueda Libre),correo (ruedalibre@gmail.com),año (2026).
