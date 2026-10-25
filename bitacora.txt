@@ -34,3 +34,11 @@ la ruta a seguir es:
  articulos: bicicletas, rutas (urbanas, montaña, electricas) con casco y equipo de proteccion incluidos.
  contenido complementario: todas las dudas que se tengan pueden enviar un gmail al correo. 
  pie: titulo de la pagina (Rueda Libre),correo (ruedalibre@gmail.com),año (2026).
+
+ se agregaron nuevas funciones al formulario de reserva: correo electronico, tipo de bicicleta,
+ recorridos, cantidad de bicicletas, planes de alquiler, informacion personal del cliente, se agrego una casilla para que el cliente deje sus comentarios y
+ se agrego una checkbox donde es obligatorio aceptar los terminos y condiciones.
+ 
+ se agrego a la pagina de reservas las funciones necesarias para que el cliente ordene su plan, cantidad de bicicletas,
+ hora, fecha, dia, tipo de bicicleta; tambien se agregaron las casillas de informacion personal del cliente,
+ documento de identidad, numero, nombre, correo electronico.

@@ -1,10 +1,12 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Reserva tu iicicleta | Alquiler de bicicletas en Medellín</title>
 </head>
+
 <body>
     <header>
         <nav calss="logo" href="/img/diseno-plantilla-logotipo-bicicleta_23-2150332110.avif">Reservas</nav>
@@ -17,54 +19,79 @@
     </header>
     <main>
         <article>
-    <h1>Reserva tu bicicleta</h1>
+            <h1>Reserva tu bicicleta</h1>
         </article>
         <aside>
-    
-    <dl>
-        <dt>Horario de atención:</dt>
-        <dd>Lunes a viernes: 9:00 AM - 6:00 PM</dd>
-        <dd>Sábado: 10:00 AM - 4:00 PM</dd>
-        <dd>Domingo: Cerrado</dd>
-     </dl>
+
+            <dl>
+                <dt>Horario de atención:</dt>
+                <dd>Lunes a viernes: 9:00 AM - 6:00 PM</dd>
+                <dd>Sábado: 10:00 AM - 4:00 PM</dd>
+                <dd>Domingo: Cerrado</dd>
+            </dl>
         </aside>
     </main>
     <main>
-    <h2>Formulario de reserva</h2>
-    <strong><p>Tus Datos</p></strong><br>
-    <form action="/submit-reservation" method="POST">
-        <label for="name">Nombre:</label>
-        <input type="text" id="name" name="name" required><br><br>
-        <label for="email">Correo electrónico:</label>
-        <input type="email" id="email" name="email" required><br><br>
-        <label for="phone">Teléfono:</label>
-        <input type="tel" id="phone" name="phone" required><br><br>
-        <strong><p>Tu alquiler</p></strong><br>
-        <label for="bike-type">Tipo de bicicleta:</label>
-        <select id="bike-type" name="bike-type" required>
-            <option value="urban">Urbana</option>
-            <option value="mountain">Montaña</option>
-            <option value="electric">Eléctrica</option>
-        </select><br><br>
-        <label for="date">Fecha de reserva:</label>
-        <input type="date" id="date" name="date" required><br><br>
-        <label for="time">Hora de reserva:</label>
-        <input type="time" id="time" name="time" required><br><br>
-        <strong><p>Confirmacion</p></strong>
-        <input type="submit" value="Reservar">
-    </form>
-    </section>
-    <section>
-    <h2>Información de contacto</h2>
-    <p>Si tienes alguna pregunta o necesitas asistencia con tu reserva, no dudes en contactarnos:</p>
-    <ul>
-        <li>Correo electrónico: <a href="mailto:ruedalibre234@gmail.com">ruedalibre234@gmail.com</a></li>
-        <li>Teléfono: <a href="tel:+57123456789">+57 1 234 56789</a></li>
-    </ul>
-    </section>
+        <h2>Formulario de reserva</h2>
+        <legend>Tus Datos</legend><br>
+        <form action="/submit-reservation" method="POST">
+            <fieldset>
+                <label for="name">Nombre:</label>
+                <input type="text" id="name" name="name" required minlength="3" maxlength="100"><br><br>
+                <label for="document">Documento de identidad</label>
+                <input type="document" id="document" name="document" required minlength="6" maxlength="10"><br><br>
+                <label for="email">Correo electrónico:</label>
+                <input type="email" id="email" name="email" required pattern="[a-zA-Z0-9._%+-]+@gmail\.com$"><br><br>
+                <label for="phone">Teléfono:</label>
+                <input type="tel" id="phone" name="phone" required minlength="10" maxlength="10"
+                    pattern="3[0-9]{9}" inputmode="numeric"
+                    title="Ingresa un número de teléfono de 10 dígitos que empiece por 3."><br><br>
+            </fieldset>
+            <strong>
+                <p>Tu alquiler</p>
+            </strong><br>
+            <fieldset>
+                <label for="rental-duration">Duración del alquiler:</label>
+                <select id="rental-duration" name="rental-duration" required>
+                    <option value="1-hour">1 hora</option>
+                    <option value="2-hours">2 horas</option>
+                    <option value="half-day">Medio día</option>
+                    <option value="full-day">Día completo</option>
+                </select><br><br>
+            <label for="bike-type">Tipo de bicicleta:</label>
+            <select id="bike-type" name="bike-type" required>
+                <option value="urban">Urbana</option>
+                <option value="mountain">Montaña</option>
+                <option value="electric">Eléctrica</option>
+            </select><br><br>
+            <label for="bike-type">Cantidad de Bicicletas:</label>
+                <input type="number" id="bike-type" name="bike-type" required min="1" max="6"><br><br>
+            <label for="date">Fecha de reserva:</label>
+            <input type="date" id="date" name="date" required min="2026-11-01" max="2026-12-31"><br><br>
+            <label for="time">Hora de reserva:</label>
+            <input type="time" id="time" name="time" required><br><br>
+            <label for="comentarios">¿quieres dar un comentario?</label>
+            <input type="text" id="comentarios" name="comentarios" minlength="0" maxlength="300"><br><br>
+            <label for="terms">Acepto los términos y condiciones</label>
+            <input type="checkbox" id="terms" name="terms" required title="Debes aceptar los terminos y condiciones para continuar">
+            <strong>
+                <p>Confirmacion</p>
+            </strong>
+            <input type="submit" value="Reservar">
+        </form>
+        </section>
+        <section>
+            <h2>Información de contacto</h2>
+            <p>Si tienes alguna pregunta o necesitas asistencia con tu reserva, no dudes en contactarnos:</p>
+            <ul>
+                <li>Correo electrónico: <a href="mailto:ruedalibre234@gmail.com">ruedalibre234@gmail.com</a></li>
+                <li>Teléfono: <a href="tel:+57123456789">+57 1 234 56789</a></li>
+            </ul>
+        </section>
     </main>
     <h4>Rueda Libre</h4>
     <a href="mailto:ruedalibre234@gmail.com"> ruedalibre@gmail.com </a><br>
     <p>Año: 2026</p>
 </body>
+
 </html>
