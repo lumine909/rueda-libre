@@ -1,0 +1,33 @@
+:root {
+    --background-color: white;
+    --blue-dark: rgb(2, 0, 99);
+    --blue-light: rgb(33, 103, 255);
+    --black-gray: rgb(41, 40, 40);
+    --light-gray: rgba(168, 168, 168, 0.685);
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    background-color: var(--background-color);
+}
+
+
+.montserrat {
+    font-family: "Montserrat", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 400;
+    font-style: normal;
+}
+
+.open-sans {
+    font-family: "Open Sans", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 400;
+    font-style: normal;
+    font-variation-settings:
+        "wdth" 100;
+}
