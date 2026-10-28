@@ -42,3 +42,6 @@ la ruta a seguir es:
  se agrego a la pagina de reservas las funciones necesarias para que el cliente ordene su plan, cantidad de bicicletas,
  hora, fecha, dia, tipo de bicicleta; tambien se agregaron las casillas de informacion personal del cliente,
  documento de identidad, numero, nombre, correo electronico.
+
+ p es la propiedad que hereda un parrafo
+ h1,h2 etc no se heredan

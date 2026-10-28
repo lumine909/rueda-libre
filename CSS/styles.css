@@ -1,12 +1,11 @@
-
-.montserrat montserrat{
+.montserrat montserrat {
   font-family: "Montserrat", sans-serif;
   font-optical-sizing: auto;
   font-weight: 600;
   font-style: normal;
 }
 
-.open-sans opensans{
+.open-sans opensans {
   font-family: "Open Sans", sans-serif;
   font-optical-sizing: auto;
   font-weight: 400;
@@ -14,6 +13,7 @@
   font-variation-settings:
     "wdth" 100;
 }
+
 .ubuntu-light {
   font-family: "Ubuntu", sans-serif;
   font-weight: 300;
@@ -62,7 +62,7 @@
   font-style: italic;
 }
 
-.noto-serif notoserif{
+.noto-serif notoserif {
   font-family: "Noto Serif", serif;
   font-optical-sizing: auto;
   font-weight: 400;
@@ -71,13 +71,65 @@
     "wdth" 100;
 }
 
-:root{
-    --blue-dark: rgb(0, 0, 61);
-    --gray-dark: rgb(45, 45, 45);
-    --blue-light: rgb(0, 146, 169);
-    --blue-superlight: rgb(151, 244, 252);
-    --purple-perfect: rgb(142, 0, 142);
-    --font-heading: ".montserrat"; ".ubuntu";
-    --font-body: "sans-serif"; "noto-serif";
+:root {
+  --blue-dark: rgb(0, 0, 61);
+  --gray-dark: rgb(36, 36, 36);
+  --blue-light: rgb(102, 220, 238);
+  --blue-superlight: rgb(227, 250, 252);
+  --purple-perfect: rgb(142, 0, 142);
+  --font-heading: ".montserrat";
+  --font-body: "sans-serif";
+  --text-sm: "2rem";
+  --text-base: "3rem";
+  --text-lg: "4rem";
 }
 
+a {
+  color: var(--purple-perfect);
+  transition: color 0.2s ease;
+}
+
+a:hover {
+  color: purple;
+}
+
+.btn:hover {
+  background: var(--purple-perfect);
+}
+
+body {
+  font-family: var(--montserrat);
+  font-size: var(--text-base);
+  background: var(--blue-superlight);
+}
+
+a {
+  font-family: var(--Open-sans);
+  font-size: var(--text-sm);
+  color: var(--gray-dark);
+  background: var(--blue-superlight);
+}
+
+h1,
+h2,
+h3 {
+  font-family: var(--montserrat);
+  color: var(--blue-dark);
+}
+
+h1 {
+  font-size: var(--text-lg);
+}
+
+h2 {
+  font-size: var(--text-base);
+}
+
+h3 {
+  font-size: var(--text-sm);
+}
+
+p {
+  font-family: var(--Open-sans); 
+  color: var(--gray-dark)
+}
