@@ -77,6 +77,11 @@
   --blue-light: rgb(102, 220, 238);
   --blue-superlight: rgb(227, 250, 252);
   --purple-perfect: rgb(142, 0, 142);
+  --white: rgb(255, 255, 255);
+  --space-xs: 0.5rem;
+  --space-sm: 1rem;
+  --space-md: 1.5rem;
+  --space-lg: 2rem;
   --font-heading: ".montserrat";
   --font-body: "sans-serif";
   --text-sm: 1.5rem;
@@ -101,6 +106,16 @@ body {
   font-family: var(--montserrat);
   font-size: var(--text-base);
   background: var(--blue-superlight);
+}
+
+* {
+  box-sizing: border-box;
+}
+
+main {
+  width: calc(100% - 2rem);
+  max-width: 70rem;
+  margin-inline: auto;
 }
 
 a {
@@ -130,25 +145,110 @@ h3 {
 }
 
 p {
-  font-family: var(--Open-sans); 
+  font-family: var(--Open-sans);
   color: var(--gray-dark)
 }
-#menu a {
+
+.menu {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-xs);
+}
+
+.menu a {
   text-decoration: none;
-  padding: 0.5rem 1rem;
+  padding: var(--space-xs) var(--space-sm);
   border-radius: 0.5rem;
   transition: background 0.2 ease, color 0.2s ease;
 }
-#menu a:focus {
+
+.menu a:focus {
   outline: 3px solid var(--purple-perfect);
   outline-offset: 2px;
   background: var(--blue-light);
   color: var(--blue-dark)
 }
-#menu a.activo {
+
+.menu a#activo {
   color: var(--purple-perfect);
   font-weight: 600;
 }
+
+.portada {
+  min-height: 70vh;
+}
+
+.servicios {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, 18rem), 1fr));
+  gap: var(--space-md);
+}
+
+.servicio {
+  width: 100%;
+  padding: var(--space-md);
+  border: 1px solid var(--blue-dark);
+  border-radius: var(--space-xs);
+}
+
+.servicio img {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+.s-table {
+  overflow-x: auto;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+th,
+td {
+  padding: var(--space-xs);
+  border: 1px solid var(--blue-dark);
+  text-align: left;
+}
+
+thead th {
+  color: var(--white);
+  background-color: var(--blue-dark);
+}
+
+.form {
+  display: grid;
+  gap: var(--space-md);
+}
+
+.form fieldset {
+  display: grid;
+  gap: var(--space-xs);
+}
+
+.form label {
+  display: block;
+}
+
+.form input:not([type="checkbox"]),
+.form select {
+  width: 100%;
+  padding: var(--space-xs);
+}
+
+.form button {
+  justify-self: start;
+  padding: var(--space-sm) var(--space-lg);
+}
+
+.text-checkbox {
+  display: flex;
+  align-items: center;
+  gap: var(--space-xs);
+}
+
 .form input:focus-visible,
 .form select:focus-visible,
 .form button:focus-visible {

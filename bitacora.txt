@@ -45,3 +45,7 @@ la ruta a seguir es:
 
  p es la propiedad que hereda un parrafo
  h1,h2 etc no se heredan
+
+29/10/2026 - Ajustes de estilos en CSS/styles.css: ancho maximo del contenido principal centrado, portada con altura minima de 70vh, tarjetas de servicios con espaciado, relleno, borde y esquinas redondeadas, tablas con celdas delimitadas y encabezados azul oscuro, formulario organizado en grupos y menu en fila.
+
+Medicion en DevTools (Computed) de la primera tarjeta .servicio, con viewport de 902 px. Antes del cambio, box-sizing: content-box: width 407.33 px + relleno horizontal 48 px + bordes 1.33 px = ancho total 456.67 px. Despues del cambio, box-sizing: border-box: ancho total 407.33 px (incluye relleno y bordes).
