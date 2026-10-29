@@ -79,9 +79,9 @@
   --purple-perfect: rgb(142, 0, 142);
   --font-heading: ".montserrat";
   --font-body: "sans-serif";
-  --text-sm: "2rem";
-  --text-base: "3rem";
-  --text-lg: "4rem";
+  --text-sm: 1.5rem;
+  --text-base: 1.25rem;
+  --text-lg: 2rem;
 }
 
 a {
@@ -132,4 +132,26 @@ h3 {
 p {
   font-family: var(--Open-sans); 
   color: var(--gray-dark)
+}
+#menu a {
+  text-decoration: none;
+  padding: 0.5rem 1rem;
+  border-radius: 0.5rem;
+  transition: background 0.2 ease, color 0.2s ease;
+}
+#menu a:focus {
+  outline: 3px solid var(--purple-perfect);
+  outline-offset: 2px;
+  background: var(--blue-light);
+  color: var(--blue-dark)
+}
+#menu a.activo {
+  color: var(--purple-perfect);
+  font-weight: 600;
+}
+.form input:focus-visible,
+.form select:focus-visible,
+.form button:focus-visible {
+  outline: 3px solid var(--purple-perfect);
+  outline-offset: 2px;
 }
