@@ -49,3 +49,8 @@ la ruta a seguir es:
 29/10/2026 - Ajustes de estilos en CSS/styles.css: ancho maximo del contenido principal centrado, portada con altura minima de 70vh, tarjetas de servicios con espaciado, relleno, borde y esquinas redondeadas, tablas con celdas delimitadas y encabezados azul oscuro, formulario organizado en grupos y menu en fila.
 
 Medicion en DevTools (Computed) de la primera tarjeta .servicio, con viewport de 902 px. Antes del cambio, box-sizing: content-box: width 407.33 px + relleno horizontal 48 px + bordes 1.33 px = ancho total 456.67 px. Despues del cambio, box-sizing: border-box: ancho total 407.33 px (incluye relleno y bordes).
+
+en la semana 1 aprendimos varias cosas como por ejemplo: las etiquetas p, strong, h1-h6, legend, let, etc; 
+estas y mas nos ayudaron a empezar a hacer la primer pagina que se llama rueda libre.
+en el dia 2 aprendimos la semantica ya que una pagina sin buena semantica no destaca mucho y carga mas lento segun tengo entendido, algunas de estas etiquetas son: main, legend, div.
+y en el dia tres aprendimos a usar css para aplicar estilo a la pagina y anque de momento no lo entiendo mucho si aprendi algunas etiquetas muy utiles como el hover, a agregar el estil de letra desde google font, rem, el active y el color. 

@@ -1,76 +1,4 @@
-.montserrat montserrat {
-  font-family: "Montserrat", sans-serif;
-  font-optical-sizing: auto;
-  font-weight: 600;
-  font-style: normal;
-}
-
-.open-sans opensans {
-  font-family: "Open Sans", sans-serif;
-  font-optical-sizing: auto;
-  font-weight: 400;
-  font-style: normal;
-  font-variation-settings:
-    "wdth" 100;
-}
-
-.ubuntu-light {
-  font-family: "Ubuntu", sans-serif;
-  font-weight: 300;
-  font-style: normal;
-}
-
-.ubuntu-regular {
-  font-family: "Ubuntu", sans-serif;
-  font-weight: 400;
-  font-style: normal;
-}
-
-.ubuntu-medium {
-  font-family: "Ubuntu", sans-serif;
-  font-weight: 500;
-  font-style: normal;
-}
-
-.ubuntu-bold {
-  font-family: "Ubuntu", sans-serif;
-  font-weight: 700;
-  font-style: normal;
-}
-
-.ubuntu-light-italic {
-  font-family: "Ubuntu", sans-serif;
-  font-weight: 300;
-  font-style: italic;
-}
-
-.ubuntu-regular-italic {
-  font-family: "Ubuntu", sans-serif;
-  font-weight: 400;
-  font-style: italic;
-}
-
-.ubuntu-medium-italic {
-  font-family: "Ubuntu", sans-serif;
-  font-weight: 500;
-  font-style: italic;
-}
-
-.ubuntu-bold-italic {
-  font-family: "Ubuntu", sans-serif;
-  font-weight: 700;
-  font-style: italic;
-}
-
-.noto-serif notoserif {
-  font-family: "Noto Serif", serif;
-  font-optical-sizing: auto;
-  font-weight: 400;
-  font-style: normal;
-  font-variation-settings:
-    "wdth" 100;
-}
-
+/* Variables */
 :root {
   --blue-dark: rgb(0, 0, 61);
   --gray-dark: rgb(36, 36, 36);
@@ -82,28 +10,23 @@
   --space-sm: 1rem;
   --space-md: 1.5rem;
   --space-lg: 2rem;
-  --font-heading: ".montserrat";
-  --font-body: "sans-serif";
+  --font-heading: "Montserrat", sans-serif;
+  --font-body: "Open Sans", sans-serif;
   --text-sm: 1.5rem;
   --text-base: 1.25rem;
   --text-lg: 2rem;
 }
 
+/* Base */
 a {
-  color: var(--purple-perfect);
+  color: var(--gray-dark);
+  font-family: var(--font-body);
+  font-size: var(--text-sm);
   transition: color 0.2s ease;
 }
 
-a:hover {
-  color: purple;
-}
-
-.btn:hover {
-  background: var(--purple-perfect);
-}
-
 body {
-  font-family: var(--montserrat);
+  font-family: var(--font-body);
   font-size: var(--text-base);
   background: var(--blue-superlight);
 }
@@ -118,17 +41,15 @@ main {
   margin-inline: auto;
 }
 
-a {
-  font-family: var(--Open-sans);
-  font-size: var(--text-sm);
-  color: var(--gray-dark);
-  background: var(--blue-superlight);
+a:hover {
+  color: var(--purple-perfect);
 }
 
 h1,
 h2,
-h3 {
-  font-family: var(--montserrat);
+h3,
+h4 {
+  font-family: var(--font-heading);
   color: var(--blue-dark);
 }
 
@@ -144,34 +65,105 @@ h3 {
   font-size: var(--text-sm);
 }
 
+h4 {
+  font-size: var(--text-base);
+}
+
 p {
-  font-family: var(--Open-sans);
+  font-family: var(--font-body);
   color: var(--gray-dark)
+}
+
+/* Navegación */
+header {
+  background-color: var(--blue-dark);
 }
 
 .menu {
   display: flex;
   flex-wrap: wrap;
+  max-width: 70rem;
+  margin-inline: auto;
+  padding: var(--space-xs);
   gap: var(--space-xs);
 }
 
 .menu a {
+  color: var(--white);
+  background: transparent;
   text-decoration: none;
   padding: var(--space-xs) var(--space-sm);
   border-radius: 0.5rem;
-  transition: background 0.2 ease, color 0.2s ease;
+  transition: background 0.2s ease, color 0.2s ease;
 }
 
-.menu a:focus {
+.menu a:hover,
+.menu a:focus-visible {
   outline: 3px solid var(--purple-perfect);
   outline-offset: 2px;
-  background: var(--blue-light);
-  color: var(--blue-dark)
+  background-color: var(--blue-light);
+  color: var(--blue-dark);
 }
 
 .menu a#activo {
-  color: var(--purple-perfect);
+  color: var(--white);
+  background-color: var(--purple-perfect);
   font-weight: 600;
+}
+
+/* Componentes */
+.btn-action,
+.form button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: var(--space-sm) var(--space-lg);
+  border-radius: var(--space-xs);
+  border: 0;
+  color: var(--white);
+  background-color: var(--purple-perfect);
+  font: inherit;
+  font-weight: 600;
+  text-decoration: none;
+  cursor: pointer;
+  transition: background-color 0.2s ease, color 0.2s ease;
+}
+
+.btn-action:hover,
+.btn-action:focus-visible,
+.form button:hover,
+.form button:focus-visible {
+  color: var(--white);
+  background-color: var(--blue-dark);
+}
+
+.btn-action:focus-visible {
+  outline: 3px solid var(--purple-perfect);
+  outline-offset: 3px;
+}
+
+footer {
+  margin-top: var(--space-lg);
+  padding: var(--space-lg) var(--space-sm);
+  color: var(--white);
+  background-color: var(--blue-dark);
+  text-align: center;
+}
+
+footer h4,
+footer p,
+footer a {
+  color: var(--white);
+}
+
+footer img {
+  width: 5rem;
+  max-width: 100%;
+  height: auto;
+}
+
+footer a:hover {
+  color: var(--blue-light);
 }
 
 .portada {
@@ -191,10 +183,30 @@ p {
   border-radius: var(--space-xs);
 }
 
+.servicio--nuevo {
+  position: relative;
+}
+
+.etiqueta-nuevo {
+  position: absolute;
+  top: var(--space-xs);
+  right: var(--space-xs);
+  padding: 0.25rem 0.625rem;
+  border-radius: 999px;
+  color: var(--white);
+  background-color: var(--purple-perfect);
+  font-size: 0.875rem;
+  font-weight: 600;
+}
+
 .servicio img {
   display: block;
   width: 100%;
   height: auto;
+}
+
+.servicio:first-child img {
+  mix-blend-mode: multiply;
 }
 
 .s-table {
@@ -218,6 +230,45 @@ thead th {
   background-color: var(--blue-dark);
 }
 
+.whatsapp-float {
+  position: fixed;
+  right: var(--space-sm);
+  bottom: var(--space-sm);
+  z-index: 1000;
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-xs);
+  padding: var(--space-xs) var(--space-sm);
+  border-radius: 999px;
+  color: var(--white);
+  background-color: #128c4a;
+  box-shadow: 0 2px 8px rgb(0 0 0 / 25%);
+  font-size: 1rem;
+  font-weight: 600;
+  text-decoration: none;
+}
+
+.whatsapp-float:hover {
+  color: var(--white);
+  background-color: #0e703b;
+}
+
+.whatsapp-float:focus-visible {
+  outline: 3px solid var(--blue-dark);
+  outline-offset: 3px;
+}
+
+.whatsapp-float svg {
+  width: 1.5rem;
+  height: 1.5rem;
+  fill: none;
+  stroke: currentColor;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  stroke-width: 1.7;
+}
+
+/* Formulario */
 .form {
   display: grid;
   gap: var(--space-md);
@@ -240,7 +291,6 @@ thead th {
 
 .form button {
   justify-self: start;
-  padding: var(--space-sm) var(--space-lg);
 }
 
 .text-checkbox {
