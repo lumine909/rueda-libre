@@ -54,3 +54,6 @@ en la semana 1 aprendimos varias cosas como por ejemplo: las etiquetas p, strong
 estas y mas nos ayudaron a empezar a hacer la primer pagina que se llama rueda libre.
 en el dia 2 aprendimos la semantica ya que una pagina sin buena semantica no destaca mucho y carga mas lento segun tengo entendido, algunas de estas etiquetas son: main, legend, div.
 y en el dia tres aprendimos a usar css para aplicar estilo a la pagina y anque de momento no lo entiendo mucho si aprendi algunas etiquetas muy utiles como el hover, a agregar el estil de letra desde google font, rem, el active y el color. 
+
+semana 2
+reto 1: al empezar a estrechar la pagina el pie comienza a ponerse en columna una arriba de la otra; al estar la pagina completamente grande el pie se ve normal en fila.

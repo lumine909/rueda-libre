@@ -147,10 +147,28 @@ footer {
   padding: var(--space-lg) var(--space-sm);
   color: var(--white);
   background-color: var(--blue-dark);
-  text-align: center;
+}
+
+.footer-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  align-items: start;
+  gap: var(--space-lg);
+  max-width: 70rem;
+  margin-inline: auto;
+}
+
+.footer-grid section {
+  min-width: 0;
+  text-align: left;
+}
+
+.footer-grid h2 {
+  margin-top: 0;
 }
 
 footer h4,
+footer h2,
 footer p,
 footer a {
   color: var(--white);
@@ -164,6 +182,13 @@ footer img {
 
 footer a:hover {
   color: var(--blue-light);
+}
+
+@media (max-width: 40rem) {
+  .footer-grid {
+    grid-template-columns: 1fr;
+    gap: var(--space-md);
+  }
 }
 
 .portada {
