@@ -57,3 +57,5 @@ y en el dia tres aprendimos a usar css para aplicar estilo a la pagina y anque d
 
 semana 2
 reto 1: al empezar a estrechar la pagina el pie comienza a ponerse en columna una arriba de la otra; al estar la pagina completamente grande el pie se ve normal en fila.
+
+05/11/2026 - Prueba responsive de la cuadrícula de la flota con anchos de viewport de 1280 px, 900 px y 500 px: se muestran 3 columnas (2 filas), 2 columnas (3 filas) y 1 columna (6 filas), respectivamente. La cuadrícula se reorganiza automáticamente sin modificar el CSS.

@@ -330,3 +330,28 @@ thead th {
   outline: 3px solid var(--purple-perfect);
   outline-offset: 2px;
 }
+
+.flota-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, 18rem), 1fr));
+  gap: var(--space-md);
+}
+
+.BNEW {
+  display: flex;
+  flex-direction: column;
+  padding: var(--space-md);
+  border: 1px solid var(--blue-dark);
+  border-radius: var(--space-xs);
+}
+
+.BNEW .btn-action {
+  align-self: flex-start;
+  margin-top: auto;
+}
+
+.BNEW img {
+  display: block;
+  width: 100%;
+  height: auto;
+}
