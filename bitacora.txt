@@ -65,3 +65,9 @@ reto 1: al empezar a estrechar la pagina el pie comienza a ponerse en columna un
 - A 768 px, el correo del pie de página excedía el ancho de su columna en la cuadrícula de tres columnas; se aplicó el mismo ajuste de salto de línea a los enlaces de contacto.
 - A 360 px, la tabla de recorridos repartía el ancho por igual entre seis columnas, apretando los nombres y encabezados; se asignaron anchos proporcionales por columna para facilitar la lectura sin desplazamiento lateral.
 - En las tres medidas, las imágenes quedaron dentro del ancho de su contenedor; las tablas de tarifas y recorridos se mantuvieron dentro del viewport móvil.
+
+06/11/2026 - Comparación de la grilla de la flota:
+- Tiempo invertido en el ejercicio Bootstrap: aproximadamente 2 minutos, estimado por el tiempo entre la solicitud y la verificación; no se contó con un cronómetro disponible.
+- En la versión propia, la distribución de `.flota-grid` ocupa 11 líneas CSS en tres reglas: una columna y gutter base, dos columnas desde 768 px y tres desde 1200 px. En la prueba Bootstrap se expresa con 5 clases de grilla: `row-cols-1`, `row-cols-sm-2`, `row-cols-lg-3`, `row-cols-xl-4` y `g-4`.
+- Bootstrap proporcionó sin CSS adicional las columnas responsivas, los breakpoints, los anchos iguales y los gutters; además, permite cuatro columnas desde `xl`, mientras que la regla propia llega a tres.
+- A cambio, se pierde el control directo sobre los breakpoints y el tamaño/implementación de los gutters, que quedan sujetos a los valores predeterminados de Bootstrap y a su CSS externo.
