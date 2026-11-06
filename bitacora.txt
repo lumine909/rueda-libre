@@ -59,3 +59,9 @@ semana 2
 reto 1: al empezar a estrechar la pagina el pie comienza a ponerse en columna una arriba de la otra; al estar la pagina completamente grande el pie se ve normal en fila.
 
 05/11/2026 - Prueba responsive de la cuadrícula de la flota con anchos de viewport de 1280 px, 900 px y 500 px: se muestran 3 columnas (2 filas), 2 columnas (3 filas) y 1 columna (6 filas), respectivamente. La cuadrícula se reorganiza automáticamente sin modificar el CSS.
+
+06/11/2026 - Pruebas responsive con emulación de viewport en 360 px, 768 px y 1280 px, en Inicio, Tarifas y Reservas:
+- A 360 px, el correo de contacto en Reservas no cabía en una línea y desbordaba su contenedor; se permitió que los enlaces de correo y teléfono se partan entre líneas.
+- A 768 px, el correo del pie de página excedía el ancho de su columna en la cuadrícula de tres columnas; se aplicó el mismo ajuste de salto de línea a los enlaces de contacto.
+- A 360 px, la tabla de recorridos repartía el ancho por igual entre seis columnas, apretando los nombres y encabezados; se asignaron anchos proporcionales por columna para facilitar la lectura sin desplazamiento lateral.
+- En las tres medidas, las imágenes quedaron dentro del ancho de su contenedor; las tablas de tarifas y recorridos se mantuvieron dentro del viewport móvil.

@@ -25,6 +25,11 @@ a {
   transition: color 0.2s ease;
 }
 
+a[href^="mailto:"],
+a[href^="tel:"] {
+  overflow-wrap: anywhere;
+}
+
 body {
   font-family: var(--font-body);
   font-size: var(--text-base);
@@ -33,6 +38,11 @@ body {
 
 * {
   box-sizing: border-box;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
 }
 
 main {
@@ -76,12 +86,26 @@ p {
 
 /* Navegación */
 header {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: var(--space-xs);
   background-color: var(--blue-dark);
+}
+
+.brand {
+  color: var(--white);
+  font-family: var(--font-heading);
+  font-size: var(--text-lg);
+  font-weight: 700;
+  text-decoration: none;
 }
 
 .menu {
   display: flex;
   flex-wrap: wrap;
+  justify-content: center;
+  width: 100%;
   max-width: 70rem;
   margin-inline: auto;
   padding: var(--space-xs);
@@ -151,9 +175,9 @@ footer {
 
 .footer-grid {
   display: grid;
-  grid-template-columns: repeat(3, minmax(0, 1fr));
+  grid-template-columns: 1fr;
   align-items: start;
-  gap: var(--space-lg);
+  gap: var(--space-md);
   max-width: 70rem;
   margin-inline: auto;
 }
@@ -184,20 +208,28 @@ footer a:hover {
   color: var(--blue-light);
 }
 
-@media (max-width: 40rem) {
-  .footer-grid {
-    grid-template-columns: 1fr;
-    gap: var(--space-md);
-  }
+.portada {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--space-sm);
+  min-height: 70vh;
+  padding-block: var(--space-lg);
+  text-align: center;
 }
 
-.portada {
-  min-height: 70vh;
+.portada .cover-up {
+  display: none;
+}
+
+.portada img {
+  width: min(100%, 10rem);
+  height: auto;
 }
 
 .servicios {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(min(100%, 18rem), 1fr));
+  grid-template-columns: 1fr;
   gap: var(--space-md);
 }
 
@@ -293,6 +325,64 @@ thead th {
   stroke-width: 1.7;
 }
 
+@media (max-width: 767px) {
+  .s-table {
+    overflow-x: visible;
+  }
+
+  .s-table table {
+    table-layout: fixed;
+  }
+
+  .s-table th,
+  .s-table td {
+    padding: 0.2rem;
+    font-size: 0.7rem;
+    overflow-wrap: anywhere;
+  }
+
+  .routes-table th:nth-child(1),
+  .routes-table td:nth-child(1) {
+    width: 8%;
+  }
+
+  .routes-table th:nth-child(2),
+  .routes-table td:nth-child(2) {
+    width: 22%;
+  }
+
+  .routes-table th:nth-child(3),
+  .routes-table td:nth-child(3) {
+    width: 17%;
+  }
+
+  .routes-table th:nth-child(4),
+  .routes-table td:nth-child(4) {
+    width: 15%;
+  }
+
+  .routes-table th:nth-child(5),
+  .routes-table td:nth-child(5) {
+    width: 12%;
+  }
+
+  .routes-table th:nth-child(6),
+  .routes-table td:nth-child(6) {
+    width: 26%;
+  }
+
+  .routes-table th,
+  .routes-table td {
+    padding: 0.1rem;
+    font-size: 0.65rem;
+  }
+
+  .routes-table th {
+    font-size: 0.6rem;
+    overflow-wrap: normal;
+  }
+}
+
 /* Formulario */
 .form {
   display: grid;
@@ -333,7 +423,7 @@ thead th {
 
 .flota-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(min(100%, 18rem), 1fr));
+  grid-template-columns: 1fr;
   gap: var(--space-md);
 }
 
@@ -354,4 +444,76 @@ thead th {
   display: block;
   width: 100%;
   height: auto;
+}
+
+@media (min-width: 768px) {
+  header {
+    flex-direction: row;
+    justify-content: space-between;
+    gap: var(--space-sm);
+    padding-inline: max(var(--space-sm), calc((100% - 70rem) / 2));
+  }
+
+  .menu {
+    justify-content: flex-end;
+    width: auto;
+    padding: 0;
+  }
+
+  .menu a {
+    padding-inline: var(--space-xs);
+    font-size: 1rem;
+  }
+
+  .portada {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) 2fr;
+    align-content: center;
+    justify-items: start;
+    gap: var(--space-xs) var(--space-lg);
+    text-align: left;
+  }
+
+  .portada img {
+    grid-row: 1 / span 3;
+    align-self: center;
+    width: min(100%, 12rem);
+  }
+
+  .servicios,
+  .flota-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .form {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .footer-grid {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: var(--space-lg);
+  }
+}
+
+@media (min-width: 1200px) {
+  .menu {
+    gap: var(--space-sm);
+  }
+
+  .portada {
+    grid-template-columns: minmax(0, 1fr) 2.5fr;
+    column-gap: var(--space-lg);
+  }
+
+  .portada img {
+    width: min(100%, 15rem);
+  }
+
+  .flota-grid {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+
+  .form {
+    gap: var(--space-lg);
+  }
 }
