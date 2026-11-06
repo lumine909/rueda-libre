@@ -1,5 +1,6 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
+
 <head>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -9,15 +10,197 @@
 
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Rueda Nocturna . Rutas</title>
-    <!-- Play CDN de Tailwind: solo para prototipar -->
-  <script src="https://cdn.tailwindcss.com"></script>
+    <title>Prototipo Rueda . Nocturna</title>
+    <script src="https://cdn.tailwindcss.com"></script>
 </head>
+
 <body>
-    <h1 class="text-3xl font-bold underline">
-        Rueda Nocturna
-    </h1>
-    <button class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">
-        Inscribete
-    </button>
+    <header class="d-flex flex-column flex-md-row align-items-center justify-content-md-between gap-2 px-3 py-2">
+        <a class="brand" href="index.html">Rueda Nocturna</a><br>
+        <a button class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded" href="Inscribete.html">Inscribete</a>
+        <nav class="menu align-self-stretch align-self-md-auto d-flex flex-wrap justify-content-center justify-content-md-end gap-2" aria-label="Navegación principal">
+            <a class="px-2 py-1 fs-6" id="activo" href="index.html">Inicio</a>
+            <a class="px-2 py-1 fs-6" href="paginas/tarifas.html">Tarifas y recorridos</a>
+            <a class="px-2 py-1 fs-6" href="paginas/reservas.html">Reservas</a>
+            <a class="px-2 py-1 fs-6" href="mailto:ruedalibre234@gmail.com">Nuestro correo</a>
+        </nav>
+    </header>
+
+    <main class="container">
+        <section class="portada row align-items-center g-4 py-5 text-center text-md-start">
+            <div class="col-12 col-md-4 col-xl-3">
+                <img class="img-fluid" src="img/diseno-plantilla-logotipo-bicicleta_23-2150332110.avif" alt="Logo de Rueda Libre"
+                    width="150" height="150">
+            </div>
+            <div class="col-12 col-md-8 col-xl-9">
+                <h1>Rueda Nocturna</h1>
+                <h2>BIENVENID@S</h2>
+                <p>Bienvenid@s a Rueda Nocturna, tu sitio web para alquilar bicicletas de todo tipo a un buen precio y del
+                    tamaño que quieras, aptas para tu familia, amigos y compañeros de trabajo.</p>
+            </div>
+        </section>
+
+        <section class="bienvenida mb-4">
+            <h2>Alquiler de bicicletas en Medellín</h2>
+            <p>En Rueda Libre, ofrecemos una amplia variedad de bicicletas para alquilar en Medellín. Ya sea que estés
+                buscando una bicicleta para un paseo por la ciudad, una bicicleta de montaña para explorar los senderos
+                o una bicicleta eléctrica para desplazarte con facilidad, tenemos la opción perfecta para ti.</p>
+        </section>
+
+        <section class="bienvenida mb-4">
+            <h2>¿Por qué elegirnos?</h2>
+            <p>En Rueda Libre, nos enorgullece ofrecer un servicio de alquiler de bicicletas confiable y asequible.
+                Nuestro equipo está comprometido a brindarte una experiencia de alquiler sin complicaciones, con
+                bicicletas de alta calidad y un excelente servicio al cliente.</p>
+        </section>
+
+        <section class="bienvenida mb-4">
+            <h2>Explora Medellín en bicicleta</h2>
+            <p>Alquilar una bicicleta con Rueda Libre te permite explorar Medellín de una manera única y divertida.
+                Descubre los hermosos paisajes, los parques y las calles de la ciudad mientras disfrutas de la libertad
+                que solo una bicicleta puede ofrecer.</p>
+        </section>
+
+        <section class="bienvenida mb-4">
+            <h3>¿Quienes Somos?</h3>
+            <p>Somos una organizacion que busca una mejor <strong>movilidad</strong> para las personas, pudiendo
+                transportarse de manera mucho más fácil por la ciudad para llegar más rápido a su destino.</p>
+            <h3>Nuestros Servicios</h3>
+        </section>
+
+        <section class="mb-4">
+            <h4>Tipos</h4>
+            <ol>
+                <li>Bicicletas offroad</li>
+                <li>Bicicletas Electricas</li>
+                <li>Bicicletas de carretera</li>
+                <li>Bicicletas para niñ@s</li>
+                <li>Bicicletas para adultos</li>
+                <li>Bicicletas para personas con movilidad reducida</li>
+            </ol>
+            <p><strong>¡Y MÁS!</strong></p>
+        </section>
+
+        <section class="mb-4">
+            <a class="btn-action" href="paginas/reservas.html">Reservar ahora</a>
+        </section>
+
+        <section class="row row-cols-1 row-cols-md-2 g-4 mb-5">
+            <article class="servicio col">
+                <img class="img-fluid w-100" src="img/bicleta.jpeg" alt="Bicicleta de carretera" width="170" height="170">
+                <h3>Bicicleta de carretera</h3>
+            </article>
+            <article class="servicio col position-relative">
+                <span class="etiqueta-nuevo position-absolute top-0 end-0 m-2">Nuevo</span>
+                <img class="img-fluid w-100" src="img/bicicleta electrica.jpeg" alt="Bicicleta eléctrica" width="170" height="170">
+                <h3>Bicicleta eléctrica</h3>
+            </article>
+        </section>
+        <section class="flota mb-5" aria-labelledby="flota-titulo">
+            <h2 id="flota-titulo">Nuestra Flota</h2>
+            <p>Ahora contamos con una nueva flota de bicicletas mucho mas diversas y de mejor calidad</p>
+            <div class="row row-cols-1 row-cols-md-2 row-cols-xl-3 g-4">
+                <article class="BNEW col d-flex flex-column h-100">
+                    <img class="img-fluid w-100" src="./img/Urbana.png" alt="Bicicleta Urbana" width="170" height="170">
+                    <h3>Bicicleta Urbana</h3>
+                    <p>Cómoda y liviana para las ciclorrutas.</p>
+                    <p>$10.000 por hora</p>
+                    <a class="btn-action mt-auto align-self-start" href="paginas/reservas.html">Reservar ahora</a>
+                </article>
+                <article class="BNEW col d-flex flex-column h-100">
+                    <img class="img-fluid w-100" src="./img/bicicleta urbana plegable.png" alt="Bicicleta Urbana Plegable" width="170" height="170">
+                    <h3>Urbana Plegable</h3>
+                    <p>Se dobla en segundos; ideal para combinar con el metro.</p>
+                    <p>$12.000 por hora</p>
+                    <a class="btn-action mt-auto align-self-start" href="paginas/reservas.html">Reservar ahora</a>
+                </article>
+                <article class="BNEW col d-flex flex-column h-100">
+                    <img class="img-fluid w-100" src="./img/bicicleta electrica.jpeg" alt="Bicicleta Eléctrica" width="170" height="170">
+                    <h3>Eléctrica Urbana</h3>
+                    <p>Asistencia eléctrica con 45 km de autonomía.</p>
+                    <p>$25.000 por hora</p>
+                    <a class="btn-action mt-auto align-self-start" href="paginas/reservas.html">Reservar ahora</a>
+                </article>
+                <article class="BNEW col d-flex flex-column h-100">
+                    <img class="img-fluid w-100" src="./img/Montaña trail.webp" alt="Bicicleta de Montaña" width="170" height="170">
+                    <h3>Bicicleta de Montaña</h3>
+                    <p>Suspensión delantera y 21 cambios para las subidas.</p>
+                    <p>$15.000 por hora</p>
+                    <a class="btn-action mt-auto align-self-start" href="paginas/reservas.html">Reservar ahora</a>
+                </article>
+                <article class="BNEW col d-flex flex-column h-100">
+                    <img class="img-fluid w-100" src="./img/Bicicleta Infantil.png" alt="Bicicleta para Niños" width="170" height="170">
+                    <h3>Bicicleta para Niños</h3>
+                    <p>Para niños de 6 a 10 años.</p>
+                    <p>$8.000 por hora</p>
+                    <a class="btn-action mt-auto align-self-start" href="paginas/reservas.html">Reservar ahora</a>
+                </article>
+                <article class="BNEW col d-flex flex-column h-100">
+                    <img class="img-fluid w-100" src="./img/Tandem.png" alt="Bicicleta tándem para dos personas" width="170" height="170">
+                    <h3>Tándem</h3>
+                    <p>Para dos personas; perfecta para pasear en pareja</p>
+                    <p>$20.000 por hora</p>
+                    <a class="btn-action mt-auto align-self-start" href="paginas/reservas.html">Reservar ahora</a>
+                </article>
+            </div>
+        </section>
+
+        <div class="s-contacto mb-4">
+            <h2>Contáctanos</h2>
+            <p>Si tienes alguna pregunta o necesitas más información sobre nuestros servicios de alquiler de bicicletas
+                en Medellín, no dudes en contactarnos. Puedes enviarnos un correo electrónico a <a
+                href="mailto:ruedalibre234@gmail.com">ruedalibre234@gmail.com</a>.</p>
+            </div>
+
+        <section class="bienvenida mb-4">
+            <h3>¿Cómo Alquilar?</h3>
+            <h4>Proceso de Alquiler</h4>
+            <p>Para alquilar una <strong>bicicleta</strong>, solo debes ingresar a nuestro sitio web y seleccionar la
+                bicicleta que deseas alquilar, luego debes llenar un <strong><em>formulario</em></strong> con tus datos
+                <strong>personales</strong> y realizar el pago correspondiente. Una vez confirmado el pago, recibirás un
+                <strong>correo electrónico</strong> con la confirmación de tu alquiler y las instrucciones para recoger
+                tu bicicleta.</p>
+        </section>
+
+        <section class="bienvenida mb-4">
+            <h2>¿Dónde estamos?</h2>
+            <p>Estamos ubicados en la carrera CL. 16 55-129, Medellín, Antioquia 050024</p>
+            <a href="https://maps.app.goo.gl/ZMRXwGkjtcKEMy4a8">Aquí estamos ubicados</a>
+        </section>
+
+        <p>¡Esperamos Tu Visita Con Muchas Ganas!</p>
+    </main>
+
+    <footer class="mt-5 p-4">
+        <div class="container row row-cols-1 row-cols-md-3 g-4">
+            <section aria-labelledby="footer-marca">
+                <h2 id="footer-marca">Marca</h2>
+                <img class="img-fluid" src="img/diseno-plantilla-logotipo-bicicleta_23-2150332110.avif" alt="Logo de Rueda Libre"
+                    width="80" height="80">
+                <p>Rueda Libre</p>
+                <p>&copy; 2026</p>
+            </section>
+            <section aria-labelledby="footer-contacto">
+                <h2 id="footer-contacto">Contacto</h2>
+                <p><a href="mailto:ruedalibre234@gmail.com">ruedalibre234@gmail.com</a></p>
+                <p><a href="tel:+57123456789">+57 1 234 56789</a></p>
+            </section>
+            <section aria-labelledby="footer-horario">
+                <h2 id="footer-horario">Horario</h2>
+                <p>De 8:00 a. m. a 4:00 p. m.</p>
+            </section>
+        </div>
+    </footer>
+    <a class="whatsapp-float position-fixed bottom-0 end-0 m-3 d-inline-flex align-items-center gap-2 px-3 py-2"
+        href="https://wa.me/57123456789?text=Hola%2C%20quiero%20informaci%C3%B3n%20sobre%20el%20alquiler%20de%20bicicletas."
+        target="_blank" rel="noopener noreferrer" aria-label="Contáctanos por WhatsApp">
+        <svg aria-hidden="true" viewBox="0 0 24 24" focusable="false">
+            <path d="M20.5 11.7a8.4 8.4 0 0 1-12.4 7.4L3 20.5l1.4-5a8.4 8.4 0 1 1 16.1-3.8Z" />
+            <path
+                d="M8.8 8.2c.2-.5.5-.5.8-.5h.5c.2 0 .4.1.5.4l.8 1.8c.1.2.1.4 0 .6l-.6.7c-.2.2-.2.4 0 .6.5.8 1.1 1.4 1.9 1.9.2.1.4.1.6-.1l.8-.9c.2-.2.4-.2.6-.1l1.7.8c.3.1.4.3.4.5 0 .3-.2 1.1-.7 1.5-.5.5-1.2.7-1.9.6-1.1-.2-2.4-.8-3.7-2-1.1-1-2-2.3-2.2-3.4-.2-.9.1-1.7.5-2.4Z" />
+        </svg>
+        <span>WhatsApp</span>
+    </a>
 </body>
+
+</html>
