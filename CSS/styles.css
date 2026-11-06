@@ -21,7 +21,6 @@
 a {
   color: var(--gray-dark);
   font-family: var(--font-body);
-  font-size: var(--text-sm);
   transition: color 0.2s ease;
 }
 
@@ -34,21 +33,6 @@ body {
   font-family: var(--font-body);
   font-size: var(--text-base);
   background: var(--blue-superlight);
-}
-
-* {
-  box-sizing: border-box;
-}
-
-img {
-  max-width: 100%;
-  height: auto;
-}
-
-main {
-  width: calc(100% - 2rem);
-  max-width: 70rem;
-  margin-inline: auto;
 }
 
 a:hover {
@@ -84,12 +68,8 @@ p {
   color: var(--gray-dark)
 }
 
-/* Navegación */
+/* Identidad visual de la navegación */
 header {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  padding: var(--space-xs);
   background-color: var(--blue-dark);
 }
 
@@ -101,22 +81,10 @@ header {
   text-decoration: none;
 }
 
-.menu {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  width: 100%;
-  max-width: 70rem;
-  margin-inline: auto;
-  padding: var(--space-xs);
-  gap: var(--space-xs);
-}
-
 .menu a {
   color: var(--white);
   background: transparent;
   text-decoration: none;
-  padding: var(--space-xs) var(--space-sm);
   border-radius: 0.5rem;
   transition: background 0.2s ease, color 0.2s ease;
 }
@@ -136,11 +104,24 @@ header {
 }
 
 /* Componentes */
+.servicio,
+.BNEW {
+  border: 1px solid var(--blue-dark);
+  border-radius: var(--space-xs);
+  padding: var(--space-md);
+}
+
+.etiqueta-nuevo {
+  padding: 0.25rem 0.625rem;
+  border-radius: 999px;
+  color: var(--white);
+  background-color: var(--purple-perfect);
+  font-size: 0.875rem;
+  font-weight: 600;
+}
+
 .btn-action,
 .form button {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
   padding: var(--space-sm) var(--space-lg);
   border-radius: var(--space-xs);
   border: 0;
@@ -166,30 +147,10 @@ header {
   outline-offset: 3px;
 }
 
-/* Distribución compartida: el pie se utiliza en Inicio, Tarifas y Reservas. */
+/* Identidad visual del pie compartido */
 footer {
-  margin-top: var(--space-lg);
-  padding: var(--space-lg) var(--space-sm);
   color: var(--white);
   background-color: var(--blue-dark);
-}
-
-.footer-grid {
-  display: grid;
-  grid-template-columns: 1fr;
-  align-items: start;
-  gap: var(--space-md);
-  max-width: 70rem;
-  margin-inline: auto;
-}
-
-.footer-grid section {
-  min-width: 0;
-  text-align: left;
-}
-
-.footer-grid h2 {
-  margin-top: 0;
 }
 
 footer h4,
@@ -199,19 +160,8 @@ footer a {
   color: var(--white);
 }
 
-footer img {
-  width: 5rem;
-  max-width: 100%;
-  height: auto;
-}
-
 footer a:hover {
   color: var(--blue-light);
-}
-
-/* Tarifas: la tabla conserva su ajuste horizontal y sus tamaños móviles. */
-.s-table {
-  overflow-x: auto;
 }
 
 table {
@@ -231,55 +181,13 @@ thead th {
   background-color: var(--blue-dark);
 }
 
-.whatsapp-float {
-  position: fixed;
-  right: var(--space-sm);
-  bottom: var(--space-sm);
-  z-index: 1000;
-  display: inline-flex;
-  align-items: center;
-  gap: var(--space-xs);
-  padding: var(--space-xs) var(--space-sm);
-  border-radius: 999px;
-  color: var(--white);
-  background-color: #128c4a;
-  box-shadow: 0 2px 8px rgb(0 0 0 / 25%);
-  font-size: 1rem;
-  font-weight: 600;
-  text-decoration: none;
-}
-
-.whatsapp-float:hover {
-  color: var(--white);
-  background-color: #0e703b;
-}
-
-.whatsapp-float:focus-visible {
-  outline: 3px solid var(--blue-dark);
-  outline-offset: 3px;
-}
-
-.whatsapp-float svg {
-  width: 1.5rem;
-  height: 1.5rem;
-  fill: none;
-  stroke: currentColor;
-  stroke-linecap: round;
-  stroke-linejoin: round;
-  stroke-width: 1.7;
-}
-
 @media (max-width: 767px) {
-  .s-table {
-    overflow-x: visible;
-  }
-
-  .s-table table {
+  .table-responsive table {
     table-layout: fixed;
   }
 
-  .s-table th,
-  .s-table td {
+  .table-responsive th,
+  .table-responsive td {
     padding: 0.2rem;
     font-size: 0.7rem;
     overflow-wrap: anywhere;
@@ -327,35 +235,34 @@ thead th {
   }
 }
 
-/* Reservas: distribución del formulario. */
-.form {
-  display: grid;
-  gap: var(--space-md);
+.whatsapp-float {
+  border-radius: 999px;
+  color: var(--white);
+  background-color: #128c4a;
+  box-shadow: 0 2px 8px rgb(0 0 0 / 25%);
+  font-size: 1rem;
+  font-weight: 600;
+  text-decoration: none;
 }
 
-.form fieldset {
-  display: grid;
-  gap: var(--space-xs);
+.whatsapp-float:hover {
+  color: var(--white);
+  background-color: #0e703b;
 }
 
-.form label {
-  display: block;
+.whatsapp-float:focus-visible {
+  outline: 3px solid var(--blue-dark);
+  outline-offset: 3px;
 }
 
-.form input:not([type="checkbox"]),
-.form select {
-  width: 100%;
-  padding: var(--space-xs);
-}
-
-.form button {
-  justify-self: start;
-}
-
-.text-checkbox {
-  display: flex;
-  align-items: center;
-  gap: var(--space-xs);
+.whatsapp-float svg {
+  width: 1.5rem;
+  height: 1.5rem;
+  fill: none;
+  stroke: currentColor;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  stroke-width: 1.7;
 }
 
 .form input:focus-visible,
@@ -363,44 +270,4 @@ thead th {
 .form button:focus-visible {
   outline: 3px solid var(--purple-perfect);
   outline-offset: 2px;
-}
-
-@media (min-width: 768px) {
-  header {
-    flex-direction: row;
-    justify-content: space-between;
-    gap: var(--space-sm);
-    padding-inline: max(var(--space-sm), calc((100% - 70rem) / 2));
-  }
-
-  .menu {
-    justify-content: flex-end;
-    width: auto;
-    padding: 0;
-  }
-
-  .menu a {
-    padding-inline: var(--space-xs);
-    font-size: 1rem;
-  }
-
-  .form {
-    grid-template-columns: repeat(2, minmax(0, 1fr));
-  }
-
-  /* Tarifas y Reservas: pie compartido en tres columnas desde tablet. */
-  .footer-grid {
-    grid-template-columns: repeat(3, minmax(0, 1fr));
-    gap: var(--space-lg);
-  }
-}
-
-@media (min-width: 1200px) {
-  .menu {
-    gap: var(--space-sm);
-  }
-
-  .form {
-    gap: var(--space-lg);
-  }
 }

@@ -28,17 +28,17 @@ la ruta a seguir es:
  tarifas - correo.
 
  Encabezado: titulo rueda libre, alquiler de bicicletas en medellin.
- navegacion: pagina principal, tarifas y recorridos, reservas, nuestro correo, nuestra direccion. 
+ navegacion: pagina principal, tarifas y recorridos, reservas, nuestro correo, nuestra direccion.
  contenido principal: bienvenida, como alquilar tu bicicleta, donde encontrarnos, quienes somos, nuestros servicios, que debes llevar, nuestras tarifas y recorridos y horarios de salida.
  secciones: inicio (rueda libre), nuestras tarifas (cuento cuesta y salidas), reserva ahora (seccion no terminada)
  articulos: bicicletas, rutas (urbanas, montaña, electricas) con casco y equipo de proteccion incluidos.
- contenido complementario: todas las dudas que se tengan pueden enviar un gmail al correo. 
+ contenido complementario: todas las dudas que se tengan pueden enviar un gmail al correo.
  pie: titulo de la pagina (Rueda Libre),correo (ruedalibre@gmail.com),año (2026).
 
  se agregaron nuevas funciones al formulario de reserva: correo electronico, tipo de bicicleta,
  recorridos, cantidad de bicicletas, planes de alquiler, informacion personal del cliente, se agrego una casilla para que el cliente deje sus comentarios y
  se agrego una checkbox donde es obligatorio aceptar los terminos y condiciones.
- 
+
  se agrego a la pagina de reservas las funciones necesarias para que el cliente ordene su plan, cantidad de bicicletas,
  hora, fecha, dia, tipo de bicicleta; tambien se agregaron las casillas de informacion personal del cliente,
  documento de identidad, numero, nombre, correo electronico.
@@ -50,10 +50,10 @@ la ruta a seguir es:
 
 Medicion en DevTools (Computed) de la primera tarjeta .servicio, con viewport de 902 px. Antes del cambio, box-sizing: content-box: width 407.33 px + relleno horizontal 48 px + bordes 1.33 px = ancho total 456.67 px. Despues del cambio, box-sizing: border-box: ancho total 407.33 px (incluye relleno y bordes).
 
-en la semana 1 aprendimos varias cosas como por ejemplo: las etiquetas p, strong, h1-h6, legend, let, etc; 
+en la semana 1 aprendimos varias cosas como por ejemplo: las etiquetas p, strong, h1-h6, legend, let, etc;
 estas y mas nos ayudaron a empezar a hacer la primer pagina que se llama rueda libre.
 en el dia 2 aprendimos la semantica ya que una pagina sin buena semantica no destaca mucho y carga mas lento segun tengo entendido, algunas de estas etiquetas son: main, legend, div.
-y en el dia tres aprendimos a usar css para aplicar estilo a la pagina y anque de momento no lo entiendo mucho si aprendi algunas etiquetas muy utiles como el hover, a agregar el estil de letra desde google font, rem, el active y el color. 
+y en el dia tres aprendimos a usar css para aplicar estilo a la pagina y anque de momento no lo entiendo mucho si aprendi algunas etiquetas muy utiles como el hover, a agregar el estil de letra desde google font, rem, el active y el color.
 
 semana 2
 reto 1: al empezar a estrechar la pagina el pie comienza a ponerse en columna una arriba de la otra; al estar la pagina completamente grande el pie se ve normal en fila.
@@ -85,5 +85,13 @@ Fuentes: https://getbootstrap.com/docs/5.3/utilities/background/ , https://getbo
 - Encabezados: las reglas `h1`-`h4` cambiaban la familia tipográfica Bootstrap; la clase `.h5` prevalecía sobre el tamaño declarado para `h2` (declaración tachada en la cascada). Solución: aislar la página de prueba y conservar las utilidades Bootstrap para tamaños y tipografía.
 - Párrafos: la regla global `p` cambiaba fuente y color de los textos `.card-text` frente a los valores base Bootstrap. Solución: no cargar `styles.css` en la página Bootstrap y mantener sus clases de tipografía.
 - Comprobación adicional: Bootstrap mantiene blanco el enlace destacado porque `.text-white` declara su color con `!important`; el hover morado de `a:hover` no lo reemplaza. Los márgenes de los textos también siguen bajo las reglas Bootstrap, ya que la hoja propia no define márgenes para `p` ni para los títulos de tarjeta.
-- La grilla propia de Inicio se trasladó a `CSS/inicio.css`, enlazada solo desde `index.html`. Las reglas restantes de tablas y formulario quedaron señaladas en `CSS/styles.css` para Tarifas y Reservas.
+- Como paso intermedio, la grilla de Inicio se trasladó a `CSS/inicio.css`; se retiró en la limpieza final descrita abajo al sustituirla por clases Bootstrap. En esa etapa se conservaron las reglas de tablas y formulario para Tarifas y Reservas.
 - Prueba de Inicio con viewports de 360 px, 768 px y 1280 px: sin desbordamiento; flota en 1, 2 y 3 columnas, respectivamente; pie en 1 columna en móvil y 3 en tablet/escritorio; imágenes dentro de sus contenedores.
+
+06/11/2026 - Limpieza de estilos y comparativa de versiones:
+- En v1.5 (`06cea596c24f0fef0e95ab40075b74483a4da332`), `CSS/styles.css` tenía 344 líneas; la hoja actual tiene 273: 71 líneas menos (aprox. 20,6 %). El conteo histórico corresponde al archivo en ese commit del historial de GitHub.
+- Tiempo: no se usó cronómetro para ninguna versión, por lo que no hay una duración efectiva comparable. Entre los commits locales de la primera versión móvil (`712c31f`, 06:30:55) y la migración v1.5 (`06cea59`, 07:35:05) transcurrieron 1 h 4 min 10 s; es tiempo entre commits, no tiempo de trabajo medido. La estimación de 2 minutos anotada antes corresponde solo al ejercicio de la grilla de la flota Bootstrap, no a toda la migración.
+- Bootstrap resuelve ahora el contenedor, la portada, las columnas de servicios y flota, el encabezado, el pie, las columnas de Tarifas y Reservas, los campos del formulario y el ajuste horizontal de tablas. `styles.css` conserva variables, tipografía, colores, tarjetas, tablas y estados; se mantienen reglas móviles específicas de la tabla de recorridos para su legibilidad.
+- Ventajas observadas: menos reglas propias de distribución, breakpoints/grillas compartidos y controles del formulario con estilos consistentes. Desventajas: más clases en el HTML, dependencia del CDN y menor control directo sobre breakpoints/gutters; las reglas de identidad que cargan después del CDN requieren revisar la cascada.
+- Conclusión: conviene dejar la distribución general a Bootstrap y reservar CSS propio para la identidad visual y las excepciones reales de componentes, como las columnas compactas de la tabla de recorridos.
+- Verificación con emulación de viewport en Inicio, Tarifas y Reservas a 360 px, 768 px y 1280 px: sin desbordamiento horizontal del documento ni imágenes rotas; la flota presenta 1, 2 y 3 columnas; el encabezado pasa de columna a fila y el pie de 1 a 3 columnas desde tablet. En Tarifas, la información complementaria pasa a 8/4 desde 992 px; en Reservas, formulario y contacto pasan a 8/4 desde 768 px. Las tablas caben en sus contenedores. Se mantienen los 10 controles requeridos y la validación nativa; el formulario vacío aparece inválido, como corresponde.
