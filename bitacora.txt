@@ -71,3 +71,11 @@ reto 1: al empezar a estrechar la pagina el pie comienza a ponerse en columna un
 - En la versión propia, la distribución de `.flota-grid` ocupa 11 líneas CSS en tres reglas: una columna y gutter base, dos columnas desde 768 px y tres desde 1200 px. En la prueba Bootstrap se expresa con 5 clases de grilla: `row-cols-1`, `row-cols-sm-2`, `row-cols-lg-3`, `row-cols-xl-4` y `g-4`.
 - Bootstrap proporcionó sin CSS adicional las columnas responsivas, los breakpoints, los anchos iguales y los gutters; además, permite cuatro columnas desde `xl`, mientras que la regla propia llega a tres.
 - A cambio, se pierde el control directo sobre los breakpoints y el tamaño/implementación de los gutters, que quedan sujetos a los valores predeterminados de Bootstrap y a su CSS externo.
+
+06/11/2026 - Clases de Bootstrap consultadas en la documentación oficial para la franja y las tarjetas:
+- `bg-primary`: aplica el color de fondo principal del tema; se combina con `text-white` para mantener contraste.
+- `px-4`: agrega relleno horizontal en ambos lados del elemento.
+- `row-cols-sm-2`: distribuye los elementos de una fila en dos columnas desde el breakpoint `sm`.
+- `g-4`: establece gutters de tamaño 4 entre columnas y filas de la grilla.
+- `text-body-secondary`: aplica el color secundario de texto del cuerpo para diferenciar las descripciones.
+Fuentes: https://getbootstrap.com/docs/5.3/utilities/background/ , https://getbootstrap.com/docs/5.3/utilities/spacing/ , https://getbootstrap.com/docs/5.3/utilities/colors/ y https://getbootstrap.com/docs/5.3/layout/grid/ .
