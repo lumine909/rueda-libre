@@ -79,3 +79,11 @@ reto 1: al empezar a estrechar la pagina el pie comienza a ponerse en columna un
 - `g-4`: establece gutters de tamaño 4 entre columnas y filas de la grilla.
 - `text-body-secondary`: aplica el color secundario de texto del cuerpo para diferenciar las descripciones.
 Fuentes: https://getbootstrap.com/docs/5.3/utilities/background/ , https://getbootstrap.com/docs/5.3/utilities/spacing/ , https://getbootstrap.com/docs/5.3/utilities/colors/ y https://getbootstrap.com/docs/5.3/layout/grid/ .
+
+06/11/2026 - Revisión de cascada con DevTools al cargar temporalmente `CSS/styles.css` sobre el catálogo Bootstrap:
+- `body`: la fuente Open Sans, el tamaño de 20 px y el fondo celeste de la hoja propia sustituyeron los valores base de Bootstrap. Solución: mantener `styles.css` sin enlazar en `pruebas/catalogo-bootstrap.html`; la página conserva solo el CDN oficial.
+- Encabezados: las reglas `h1`-`h4` cambiaban la familia tipográfica Bootstrap; la clase `.h5` prevalecía sobre el tamaño declarado para `h2` (declaración tachada en la cascada). Solución: aislar la página de prueba y conservar las utilidades Bootstrap para tamaños y tipografía.
+- Párrafos: la regla global `p` cambiaba fuente y color de los textos `.card-text` frente a los valores base Bootstrap. Solución: no cargar `styles.css` en la página Bootstrap y mantener sus clases de tipografía.
+- Comprobación adicional: Bootstrap mantiene blanco el enlace destacado porque `.text-white` declara su color con `!important`; el hover morado de `a:hover` no lo reemplaza. Los márgenes de los textos también siguen bajo las reglas Bootstrap, ya que la hoja propia no define márgenes para `p` ni para los títulos de tarjeta.
+- La grilla propia de Inicio se trasladó a `CSS/inicio.css`, enlazada solo desde `index.html`. Las reglas restantes de tablas y formulario quedaron señaladas en `CSS/styles.css` para Tarifas y Reservas.
+- Prueba de Inicio con viewports de 360 px, 768 px y 1280 px: sin desbordamiento; flota en 1, 2 y 3 columnas, respectivamente; pie en 1 columna en móvil y 3 en tablet/escritorio; imágenes dentro de sus contenedores.
