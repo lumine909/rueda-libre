@@ -1,29 +1,54 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Rueda-Nocturna</title>
-     <script src="https://cdn.tailwindcss.com"></script>
-<div class="bg-blue-900 p-4">
-     <p>Nuevo</p>
-     <p>Jueves a Sabado</p><br>
-</div>
-</head>
-<body>
-<div class="bg-blue-800 p-4">
 
-   <h1 class="text-3xl font-bold">Rueda Nocturna</h1>
-   <p>Descubre Medellin en bici cuando se enciendan las luces</p><br>
-   <img src="../img/Gravel Aventura.png" alt="Gravel Aventura" class="w-full h-auto" width="600" height="400"><br>
-   <p><strong>desde $55.000</strong></p>
-   <button class="rounded-lg px-4 py-2 bg-sky-500 hover:bg-blue-700 active:bg-sky-700 focus:outline-none focus:ring-sky-400 text-slate-900 group-hover:stroke-white">Inscribete</button>
-   <img src="../img/Electrica Urbana.png" alt="Bicicleta electrica" class="w-full h-auto" width="600" height="400"><br>
-   <p><strong>desde $55.000</strong></p>
-   <button class="rounded-lg px-4 py-2 bg-sky-500 hover:bg-blue-700 active:bg-sky-700 focus:outline-none focus:ring-sky-400 text-slate-900 group-hover:stroke-white">Inscribete</button>
-   <img src="../img/Urbana.png" alt="Bicicleta Urbana" class="w-full h-auto" width="600" height="400"><br>
-   <p><strong>desde $55.000</strong></p>
-   <button class="rounded-lg px-4 py-2 bg-sky-500 hover:bg-blue-700 active:bg-sky-700 focus:outline-none focus:ring-sky-400 text-slate-900 group-hover:stroke-white">Inscribete</button>
-</div>
+<head>
+     <meta charset="UTF-8">
+     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+     <title>Rueda-Nocturna</title>
+     <script src="https://cdn.tailwindcss.com"></script>
+     <script>
+          tailwind.config = {
+               theme: {
+                    extend: {
+                         colors: {
+                              miColor: {
+                                   100: "#0A1128",
+                                   500: "#0A1128",
+                                   900: "oklch(12.9% 0.042 264.695)",
+                              }
+                         }
+                    }
+               }
+          };
+     </script>
+</head>
+
+<body class="min-h-screen bg-miColor-500">
+     <p class="font-family-sans text-white">
+     
+     <div class="bg-miColor-900 p-4 text-white p-4">
+          <p>Nuevo</p>
+          <p>Jueves a Sabado</p><br>
+     </div>
+<div class="bg-miColor-500 p-4">
+     
+          <h1 class="bg-miColor-100 font-bold text-white p-4 text-6xl">Rueda Nocturna</h1>
+          <p class="text-white p-4 text-lg tracking-wide">Descubre Medellin en bici cuando se enciendan las luces</p><br>
+          <img src="../img/Gravel Aventura.png" alt="Gravel Aventura" class="w-full h-auto" width="600"
+               height="400"><br>
+          <p class="text-white p-4 text-lg uppercase"><strong>desde $55.000</strong></p>
+          <button
+               class="rounded-lg px-4 py-2 bg-sky-500 hover:bg-blue-700 active:bg-sky-700 focus:outline-none focus:ring-sky-400 text-slate-900 group-hover:stroke-white">Inscribete</button>
+          <img src="../img/Electrica Urbana.png" alt="Bicicleta electrica" class="w-full h-auto" width="600"
+               height="400"><br>
+          <p class="text-white p-4 text-lg uppercase"><strong>desde $55.000</strong></p>
+          <button
+               class="rounded-lg px-4 py-2 bg-sky-500 hover:bg-blue-700 active:bg-sky-700 focus:outline-none focus:ring-sky-400 text-slate-900 group-hover:stroke-white">Inscribete</button>
+          <img src="../img/Urbana.png" alt="Bicicleta Urbana" class="w-full h-auto" width="600" height="400"><br>
+          <p class="text-white p-4 text-lg uppercase"><strong>desde $55.000</strong></p>
+          <button
+               class="rounded-lg px-4 py-2 bg-sky-500 hover:bg-blue-700 active:bg-sky-700 focus:outline-none focus:ring-sky-400 text-slate-900 group-hover:stroke-white">Inscribete</button>
+          </div>
 </body>
+
 </html>
