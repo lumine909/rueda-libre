@@ -101,3 +101,8 @@ Fuentes: https://getbootstrap.com/docs/5.3/utilities/background/ , https://getbo
 - Hoy, en `nocturna/prototipo.html`, construí «Inscríbete» como `<button>` usando Tailwind por medio del Play CDN. Combiné utilidades: `bg-blue-500` para el fondo, `hover:bg-blue-700` para el estado hover, `text-white` y `font-bold` para el texto, `py-2 px-4` para el relleno y `rounded` para las esquinas.
 - Diferencia clave: Bootstrap ofrece estilos de componentes listos para usar (`btn btn-primary`); con Tailwind se combinan clases pequeñas, cada una responsable de una propiedad o estado, para definir el aspecto directamente en el HTML.
 - La etiqueta también depende de la función: uso un enlace para navegar a otra página y un botón para ejecutar una acción.
+
+11/11/2026 - Utilidades Tailwind y variantes de botones en nocturna/index.html:
+- En src/output.css, bg-sky-500 s? aparece porque se usa en el primer bot?n; bg-pink-500 no aparece porque no se usa en el HTML detectado por Tailwind.
+- Tailwind genera solo las utilidades que encuentra en los archivos fuente escaneados; as? evita incluir CSS de clases que la p?gina no utiliza.
+- Se crearon tres variantes de bot?n: azul, violeta y contorno blanco. Las tres cambian al pasar el puntero con hover y muestran un anillo amarillo visible con focus-visible al recibir foco de teclado. El anillo reemplaza el contorno nativo que se desactiva.
