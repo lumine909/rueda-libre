@@ -110,5 +110,58 @@ Fuentes: https://getbootstrap.com/docs/5.3/utilities/background/ , https://getbo
 12/11/2026 - Reglas del kit visual de Nocturna:
 - Radio uniforme de 8 px (`rounded-lg`) para botones, tarjetas, etiquetas, alertas y campos.
 - Escala de espaciado basada en múltiplos de 4 px, usando la escala predeterminada de Tailwind para márgenes, rellenos y separaciones.
-- Paleta semántica compartida: fondo y superficies azul marino (`miColor`), texto blanco y secundario slate, bordes blancos al 20 %, acción principal y foco sky/amarillo, variante secundaria violeta, nivel fácil/éxito emerald, nivel intermedio/advertencia amber e información sky.
+- Paleta semántica compartida definida con `@theme`: `azul-nocturno` (#0A1128), `luz-lunar` (#F8FAFC), `azul-electrico` (#0EA5E9), `violeta-neon` (#7C3AED), `verde-ruta` (#10B981) y `amarillo-farol` (#FDE047). La landing y la página de componentes usan estas utilidades en vez de colores genéricos de Tailwind.
+- Tipografías de Google Fonts: Open Sans para el texto general y Montserrat para los encabezados; ambas familias se registran en `@theme`.
 - Se aplicó la misma regla de radio a las tarjetas y etiquetas de nivel de las rutas en `nocturna/index.html` y `nocturna/componentes.html`. Botones, alertas y nuevos campos de correo y celular usan la paleta semántica y la escala común; los campos enlazan sus ayudas con `aria-describedby` y muestran foco visible.
+
+12/11/2026 - Grillas responsivas para rutas y pasos:
+- Se eligió CSS Grid para las tres tarjetas de rutas porque distribuye las cards en columnas de igual ancho y permite pasar de una columna en móvil a dos en tablet y tres en escritorio.
+- También se usó CSS Grid para los cuatro pasos: conserva el orden de lectura y los organiza en una columna, dos columnas o cuatro columnas según el ancho disponible.
+
+12/11/2026 - Revisión mobile-first de la landing:
+- En la inspección inicial a 360 px no se detectó desbordamiento horizontal (ancho del documento y del contenido: 345 px) ni imágenes rotas. El título principal ocupaba dos líneas sin recorte; las rutas, los pasos y el pie se apilaban correctamente.
+- El encabezado dependía de flex-wrap y sus elementos quedaban en filas alineadas a la izquierda, en vez de formar explícitamente una pila centrada en móvil. Se cambió a columna en móvil y fila desde md.
+- Después del ajuste, las pruebas a 360, 768 y 1280 px no mostraron desbordamiento ni imágenes rotas. Las rutas presentan 1, 2 y 3 columnas; los pasos, 1, 2 y 4; encabezado y pie pasan a fila desde md.
+- Se dejaron las clases de layout en clave mobile-first: grid-cols-1 con sm:grid-cols-2 y lg:grid-cols-3 para rutas; grid-cols-1 con sm:grid-cols-2 y lg:grid-cols-4 para pasos; flex-col con md:flex-row para encabezado y pie.
+
+12/11/2026 - Prueba responsive de la landing en modo dispositivo:
+
+| Ancho | Encabezado | Enlaces | CTA | Rutas | Pasos | Pie | Desbordamiento / imágenes rotas |
+| --- | --- | --- | --- | ---: | ---: | --- | --- |
+| 360 px | Columna | Ocultos | Visible | 1 columna | 1 columna | Columna | No / 0 |
+| 768 px | Fila | Visibles | Visible | 2 columnas | 2 columnas | Fila | No / 0 |
+| 1024 px | Fila | Visibles | Visible | 3 columnas | 4 columnas | Fila | No / 0 |
+| 1280 px | Fila | Visibles | Visible | 3 columnas | 4 columnas | Fila | No / 0 |
+
+12/11/2026 - Tema claro/oscuro y verificación de contraste:
+- Se usan las variantes `dark:` de Tailwind con la estrategia predeterminada `prefers-color-scheme`; el tema sigue la preferencia del sistema.
+- Verificación WCAG AA: Verde Ruta (#10B981) sobre Azul Noche (#0A1128), 7.37:1; Luz Lunar (#F8FAFC) sobre Azul Noche, 17.86:1; Azul Eléctrico sobre Azul Noche, 6.74:1. Todos superan 4.5:1.
+- Los contrastes de texto medidos en los dos temas quedaron por encima de 4.5:1; el mínimo registrado, en el hover del CTA oscuro, fue 4.70:1. Los bordes de cards y campos alcanzan 3.42:1 en claro y 3.65:1 en oscuro.
+- Se corrigieron estados que no cumplían: enlaces azules en fondo claro (2.65:1), hover violeta del botón secundario en claro (3.87:1) y bordes de cards/pasos claros con opacidad 40 % (2.56:1). Los enlaces ahora usan Azul Noche/Violeta en claro y Azul Eléctrico/Amarillo Farol en oscuro; los bordes claros usan 50 %.
+- El anillo de foco usa Azul Noche en claro y Amarillo Farol en oscuro.
+
+12/11/2026 - Repetición de clases y componentes de botón:
+- Conteo inicial entre `nocturna/index.html` y `nocturna/componentes.html`: estilo primario de botón 7 veces (3 listas base y 4 con `mt-4 w-full`), secundario 1 y alternativo 1; navegación 7; marcado de card de ruta 3; card de paso 4; imagen 4; etiqueta de dato 12; lista de clases de campo 2.
+- Se definieron tres clases con `@apply` en `@layer components`: `.btn-primary` (7 usos), `.btn-secondary` (1) y `.btn-outline` (1). Las utilidades de ancho y margen propias de las cards permanecen en el HTML.
+- Las cards y campos conservan su marcado del kit; se repitieron sus clases existentes en lugar de crear abstracciones adicionales.
+
+12/11/2026 - Orden de clases y medida del CSS minificado:
+- En `nocturna/index.html` y `nocturna/componentes.html` se agruparon las utilidades por layout, espaciado, tipografia, color y estados; las variantes responsive, dark, hover y focus quedan al final. Las tres reglas de `@apply` siguen el mismo orden por categoria.
+- Compilacion con Tailwind CSS CLI v4.3.5 y `--minify`: `nocturna/src/output.css` mide 24.124 bytes, frente a 29.897 antes de minificar (5.773 bytes, 19,3 % menos).
+- La pagina principal local (`index.html`) carga Bootstrap 5.3.8 CSS, pero no JavaScript. El CSS del CDN mide 232.111 bytes descomprimido y declara `Content-Length` de 33.048 bytes; el CSS minificado de Tailwind ocupa 10,4 % del CSS Bootstrap descomprimido.
+- `pruebas/catalogo-bootstrap.html` tambien carga el bundle Bootstrap: 80.496 bytes descomprimido y `Content-Length` de 24.469 bytes. Esta medicion de JavaScript corresponde a la pagina de prueba, no a `index.html`.
+- No se encontro una URL o etiqueta v2.0 identificable en el repositorio; se midieron los recursos de la version local actual y se deja indicada la diferencia entre la pagina principal y el catalogo Bootstrap.
+
+12/11/2026 - Comparativa Bootstrap y Tailwind:
+
+| Criterio | Bootstrap | Tailwind | Evidencia / experiencia |
+| --- | --- | --- | --- |
+| Curva de aprendizaje | Más rápido al inicio: componentes listos y nombres como `btn btn-primary` y clases de grilla. | Requiere aprender y combinar utilidades; después permite construir el estilo directamente en el marcado. | La grilla Bootstrap se resolvió rápidamente con clases existentes; con Tailwind se ajustaron paso a paso los breakpoints, estados y temas. |
+| Personalización | La identidad visual suele requerir variables o CSS propio; hay que vigilar la cascada y los estilos predeterminados. | Alta: `@theme`, utilidades y variantes responsive/dark facilitaron aplicar la paleta y reglas del kit. | En el catálogo Bootstrap, `styles.css` alteraba estilos base y hubo que aislarla; en Nocturna se definieron tokens y solo tres clases propias de botones. |
+| Tamaño final | La hoja Bootstrap 5.3.8 del sitio mide 232.111 bytes descomprimida (33.048 en `Content-Length`). | El CSS Tailwind minificado mide 24.124 bytes para las dos páginas Nocturna, cerca del 10,4 % de la hoja Bootstrap. | La comparación es solo entre estas hojas CSS: Bootstrap ofrece el framework completo y el CSS generado incluye las utilidades detectadas. El sitio principal carga además `CSS/styles.css`; no carga JS Bootstrap. El bundle de 80.496 bytes descomprimidos (24.469 en `Content-Length`) solo aparece en el catálogo de prueba. |
+| Casos de uso | Conveniente para sitios que necesitan componentes y grillas estándar rápidamente, especialmente si ya dependen de Bootstrap. | Conveniente para interfaces con identidad propia, control fino responsive/temas y CSS generado según las clases usadas. | Bootstrap ya estructura el sitio principal de Rueda Libre; Tailwind encajó en la landing independiente Nocturna, con tema de marca y modo oscuro. |
+
+Recomendación para Rueda Libre:
+- Mantener Bootstrap en el sitio principal por continuidad: ya se usa en sus páginas, ofrece grillas y componentes conocidos, y migrarlo implicaría rehacer marcado y revisar estilos sin una ganancia funcional demostrada.
+- Usar Tailwind en micrositios nuevos o rediseños independientes como Nocturna, donde la personalización de marca y el CSS generado pequeño son ventajas concretas.
+- No cargar ambos frameworks en la misma página. La diferencia de tamaño medida es orientativa, no una comparación funcional equivalente; antes de migrar el sitio completo conviene medir el total de CSS/JS y validar todas sus páginas.

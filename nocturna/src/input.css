@@ -1,7 +1,59 @@
 @import "tailwindcss";
 
 @theme {
-  --color-miColor-100: #0A1128;
-  --color-miColor-500: #0A1128;
-  --color-miColor-900: oklch(12.9% 0.042 264.695);
+  --color-azul-nocturno: #0A1128;
+  --color-luz-lunar: #F8FAFC;
+  --color-azul-electrico: #0EA5E9;
+  --color-violeta-neon: #7C3AED;
+  --color-verde-ruta: #10B981;
+  --color-amarillo-farol: #FDE047;
+
+  --font-montserrat: "Montserrat", sans-serif;
+  --font-open-sans: "Open Sans", sans-serif;
+}
+
+@layer components {
+  .btn-primary {
+    @apply px-4 py-2 font-semibold rounded-lg bg-azul-electrico text-azul-nocturno transition-colors hover:bg-azul-electrico/80 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-azul-nocturno focus-visible:ring-offset-2 focus-visible:ring-offset-luz-lunar;
+  }
+
+  .btn-secondary {
+    @apply px-4 py-2 font-semibold rounded-lg bg-violeta-neon text-luz-lunar transition-colors hover:bg-azul-nocturno focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-azul-nocturno focus-visible:ring-offset-2 focus-visible:ring-offset-luz-lunar;
+  }
+
+  .btn-outline {
+    @apply px-4 py-2 font-semibold rounded-lg border-2 border-azul-nocturno bg-transparent text-azul-nocturno transition-colors hover:bg-azul-nocturno hover:text-luz-lunar focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-azul-nocturno focus-visible:ring-offset-2 focus-visible:ring-offset-luz-lunar;
+  }
+
+  @variant dark {
+    .btn-primary:focus-visible,
+    .btn-secondary:focus-visible,
+    .btn-outline:focus-visible {
+      @apply ring-amarillo-farol ring-offset-azul-nocturno;
+    }
+
+    .btn-secondary:hover {
+      @apply bg-violeta-neon/80;
+    }
+
+    .btn-outline {
+      @apply border-luz-lunar text-luz-lunar;
+    }
+
+    .btn-outline:hover {
+      @apply bg-luz-lunar text-azul-nocturno;
+    }
+  }
+}
+
+@layer base {
+  body {
+    font-family: var(--font-open-sans);
+  }
+
+  h1,
+  h2,
+  h3 {
+    font-family: var(--font-montserrat);
+  }
 }
