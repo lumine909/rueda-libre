@@ -106,3 +106,9 @@ Fuentes: https://getbootstrap.com/docs/5.3/utilities/background/ , https://getbo
 - En src/output.css, bg-sky-500 s? aparece porque se usa en el primer bot?n; bg-pink-500 no aparece porque no se usa en el HTML detectado por Tailwind.
 - Tailwind genera solo las utilidades que encuentra en los archivos fuente escaneados; as? evita incluir CSS de clases que la p?gina no utiliza.
 - Se crearon tres variantes de bot?n: azul, violeta y contorno blanco. Las tres cambian al pasar el puntero con hover y muestran un anillo amarillo visible con focus-visible al recibir foco de teclado. El anillo reemplaza el contorno nativo que se desactiva.
+
+12/11/2026 - Reglas del kit visual de Nocturna:
+- Radio uniforme de 8 px (`rounded-lg`) para botones, tarjetas, etiquetas, alertas y campos.
+- Escala de espaciado basada en múltiplos de 4 px, usando la escala predeterminada de Tailwind para márgenes, rellenos y separaciones.
+- Paleta semántica compartida: fondo y superficies azul marino (`miColor`), texto blanco y secundario slate, bordes blancos al 20 %, acción principal y foco sky/amarillo, variante secundaria violeta, nivel fácil/éxito emerald, nivel intermedio/advertencia amber e información sky.
+- Se aplicó la misma regla de radio a las tarjetas y etiquetas de nivel de las rutas en `nocturna/index.html` y `nocturna/componentes.html`. Botones, alertas y nuevos campos de correo y celular usan la paleta semántica y la escala común; los campos enlazan sus ayudas con `aria-describedby` y muestran foco visible.
